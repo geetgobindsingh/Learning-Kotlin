@@ -6,7 +6,7 @@ package begining.classes
 //region Using `object` keyword implementing Singleton Pattern
 // We can create objects without initialising the classes
 object Global {
-    val PI :Int =  3.14
+    val PI =  3.14
 }
 //endregion
 
