@@ -3,7 +3,7 @@ package begining.classes
 /**
  * Created by Geet on 20-05-2017.
  */
-//Using `object` keyword implementing Singleton Pattern
+//region Using `object` keyword implementing Singleton Pattern
 // We can create objects without initialising the classes
 object Global {
     val PI :Int =  3.14
