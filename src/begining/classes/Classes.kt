@@ -1,5 +1,7 @@
 package begining.classes
 
+import java.util.*
+
 /**
  * Created by Geet on 19-05-2017.
  */
@@ -41,6 +43,34 @@ class Fan(var handsCount: Int) { // base/primary constructor
 }
 //endregion
 
+//region Using getters and setters in Kotlin class
+class Timeline(val yearOfBirth: Int) {
+    val age: Int
+            get() = Calendar.getInstance().get(Calendar.YEAR) - yearOfBirth
+    var name: String = "Geet"
+            set(value) {
+                if(value == null || value.length == 0) {
+                    throw Exception("name cannot be null or of length 0") // we can use some condition while setting
+                }
+                field = value // here field is a keyword used to initializing name
+            }
+}
+//endregion
+
+//region Creating functions inside class
+class Batch(val numberOfStudents: Int) {
+    fun getStudentsCount() = numberOfStudents
+}
+//endregion
+
+//region Visibility Modifiers in Kotlin
+// Four Visibility modifiers are:
+// public - is default and accessible everywhere
+// private - available inside file containing declaration and only available to class members
+// internal - anywhere in same module
+// protected - same as private and visible in subclassesg
+//endregion
+
 //region Main Function
 fun main(args: Array<String>) {
     //creating User object
@@ -57,6 +87,11 @@ fun main(args: Array<String>) {
     // Using secondary constructor
     var fan = Fan("Khaitan")
     println("${fan.company} have ${fan.handsCount} hands")
-
+    var timeline = Timeline(1992)
+    //timeline.name = "" will throw exception
+    println("Age is ${timeline.age} and name is ${timeline.name}")
+    //calling member methods of a class
+    var batch = Batch(50)
+    println("Students in a batch are ${batch.getStudentsCount()}")
 }
 //endregion
